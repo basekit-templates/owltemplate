@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-homepage">
+
+    <div class="tablet-mob-nav wrapper clearfix">
+        {{widget('extendednavigation', 'tabletnav', {})|raw}}
+    </div>
+
+    <div class="logo-nav">
+        <header class="bk-header companyheader clearfix">
+            {{widget('logo', 'desktoplogo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'desktopcompanyname', {"business": "profile"})|raw}}
+        </header>  
+        {{widget('extendednavigation', 'desktopnav', {})|raw}}
+        {{widget('companyaddress', 'desktopcompanyaddress', {})|raw}}
+        {{widget('clicktocall', 'desktopclicktocall', {phoneText: '212 6574 6736'})|raw}}
+    </div> <!-- end desktop-left-column -->
+    <section>
+            {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Nullam Posuer","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': false})|raw}}
+        </section>
+
+    <div class="zone-area clearfix">
+        <div class="main wrapper clearfix">
+            {{zone('main')|raw}}
+        </div>  <!-- end main -->
+    </div><!-- end desktop-right-column -->
+
+</div>
+
+{% endblock %}

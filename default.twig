@@ -1,0 +1,33 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default">
+
+    <div class="tablet-mob-nav wrapper clearfix">
+        {{widget('extendednavigation', 'tabletnav', {})|raw}}
+    </div>
+
+    <div class="logo-nav">
+        <header class="bk-header companyheader clearfix">
+            {{widget('logo', 'desktoplogo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'desktopcompanyname', {"business": "profile"})|raw}}
+        </header>  
+        {{widget('extendednavigation', 'desktopnav', {})|raw}}
+        {{widget('companyaddress', 'desktopcompanyaddress', {})|raw}}
+        {{widget('clicktocall', 'desktopclicktocall', {phoneText: '212 6574 6736'})|raw}}
+    </div> <!-- end desktop-left-column -->
+
+        <div class="basket-container">
+            {{widget('ecombasket', 'ecombasket', {})|raw}}
+        </div>
+    <div class="canvas clearfix">
+        <div class="main wrapper clearfix">
+
+            {{zone('main')|raw}}
+        </div>  <!-- end main -->
+    </div><!-- end desktop-right-column:zone-area clearfix -->
+
+</div><!-- end bk-pt-default -->
+
+{% endblock %}
