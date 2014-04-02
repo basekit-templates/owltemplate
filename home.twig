@@ -17,15 +17,16 @@
         {{widget('companyaddress', 'desktopcompanyaddress', {})|raw}}
         {{widget('clicktocall', 'desktopclicktocall', {phoneText: '212 6574 6736'})|raw}}
     </div> <!-- end desktop-left-column -->
-    <section>
-            {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Nullam Posuer","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': false})|raw}}
-        </section>
 
-    <div class="zone-area clearfix">
+        <div class="basket-container">
+            {{widget('ecombasket', 'ecombasket', {})|raw}}
+        </div>
+    <div class="canvas clearfix">
         <div class="main wrapper clearfix">
+
             {{zone('main')|raw}}
         </div>  <!-- end main -->
-    </div><!-- end desktop-right-column -->
+    </div><!-- end canvas -->
 
 </div>
 
