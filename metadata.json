@@ -1,7 +1,7 @@
 {
 	"name":"Owl",
-	"thumbnail":"owl.png",
-	"screenshot":"owl.png",
+	"thumbnail":"owltemplate.png",
+	"screenshot":"owltemplate.png",
     "pageTypes": ["default", "home", "about", "contact", "gallery"],
     "tags": {
     "en": ["clean", "menu", "ecommerce"],
