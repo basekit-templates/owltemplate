@@ -2,11 +2,11 @@
 	"name":"Owl",
 	"thumbnail":"owl.png",
 	"screenshot":"owl.png",
-    "pageTypes": ["productlist","product", "checkout", "default", "home", "about", "contact", "gallery"],
+    "pageTypes": ["default", "home", "about", "contact", "gallery"],
     "tags": {
-    "en": ["clean", "menu", "cafe", "bar", "restaurant"],
-    "es": ["limpio", "menú", "cafetería", "bar", "restaurante"],
-    "br": ["limpo", "menu", "cafeteria", "bar", "restaurante"]
+    "en": ["clean", "menu", "ecommerce"],
+    "es": ["limpio", "menú", "ecommerce"],
+    "br": ["limpo", "menu", "ecommerce"]
     },
 	"colorSwatches":
     {
@@ -57,7 +57,7 @@
         }
     },
     "fontSwatch": {
-       "title": "Merriweather",
+       "title": "Arvo",
         "font1": {
             "font-family": "\"Arvo\", Georgia, serif",
             "font-size": "30px",
