@@ -972,7 +972,7 @@ hr {
     }
 }   
 .widget.ecombasket {
-    position: absolute;
+    position: fixed;
     right: 0;
     float: right;
     margin-right: 2.5%;
@@ -1029,7 +1029,7 @@ hr {
             width: 21px;
             margin: 0 10px 0 0;
             position: relative;
-            top:1px;
+            top:3px;
         }
         &:hover {
             -webkit-border-bottom-right-radius: 0px;
@@ -1329,7 +1329,7 @@ hr {
             @media @mobile {
                 width:100%;
             }
-            &:before {
+            &.ecom-product-add-to-cart-btn .text:before {
                 content: "";
                 background-image: image('/images/basketicon.png');
                 background-repeat: no-repeat;
@@ -1338,7 +1338,7 @@ hr {
                 width: 21px;
                 margin: 0 10px 0 0;
                 position: relative;
-                top:1px;
+                top:4px;
             }
         }
 
