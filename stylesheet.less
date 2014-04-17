@@ -965,11 +965,11 @@ hr {
     position: relative;
     margin-right: 0;
     width: 100%;
+    z-index: 1;
     .ecombasket-pull {
         width:150px;
         padding: 10px;
-        margin: 0 auto;
-        background-color: @color-swatch4;
+        background-color: @color-swatch5;
         -webkit-border-bottom-right-radius: 0px;
         -webkit-border-bottom-left-radius: 0px;
         -moz-border-radius-bottomright: 0px;
@@ -979,6 +979,9 @@ hr {
         -webkit-box-shadow: none;
         -moz-box-shadow:    none;
         box-shadow:         none;
+        @media @tablet {
+            width: 100%;
+        }
     }
     .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link {
         display: inline-block;
@@ -1023,10 +1026,10 @@ hr {
             -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
             box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
         @media @tablet {
-            width:150px;
+            width:100%;
             padding: 10px;
             margin: 0 auto;
-            background-color: @color-swatch4;
+            background-color: @color-swatch5;
         }
         @media @mobile {
             width:100%;
