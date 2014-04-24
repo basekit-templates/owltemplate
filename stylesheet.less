@@ -453,6 +453,9 @@ body {
         float: left;
         width: 88%;
         margin: 0 6%;
+            @media @mobile {
+            padding: 2em;
+        }
         .main {
             display: none;
             &.selected {
@@ -473,7 +476,7 @@ body {
                 margin: 0;
                 padding: 4em 0 2em;
                 text-align: left;
-                border-bottom: 1px dotted fade(@color-swatch6,15%);
+                border-bottom: 1px dotted fade(@color-swatch6,50%);
                 @media @tablet {
                     padding: 2em 0 0.5em;
                 }
@@ -484,6 +487,61 @@ body {
                .menu-items {
                     width: 100%;
                     display: block;
+                    -webkit-column-count: 2;
+                    -webkit-column-gap: 4em;
+                    -moz-column-count: 2;
+                    -moz-column-gap: 4em;   
+                    column-count: 2;
+                    column-gap: 4em;
+                    > * {
+                        break-inside: avoid;
+                        -webkit-column-break-inside: avoid;
+                        -moz-column-break-inside: avoid;
+                        -ms-column-break-inside: avoid;
+                        -o-column-break-inside: avoid;
+                    }
+                    @media only screen and (max-width: 1100px) {
+                        -webkit-column-count: 1;
+                        -moz-column-count: 1;
+                        column-count: 1;
+                    }
+                    &.odd {
+                        -webkit-column-count: 3;
+                        -moz-column-count: 3;
+                        column-count: 3;
+                        @media only screen and (max-width: 1300px) {
+                            -webkit-column-count: 2;
+                            -webkit-column-gap: 4em;
+                            -moz-column-count: 2;
+                            -moz-column-gap: 4em;   
+                            column-count: 2;
+                            column-gap: 4em;
+                        }
+                        @media only screen and (max-width: 1100px) {
+                            -webkit-column-count: 1;
+                            -moz-column-count: 1;
+                            column-count: 1;
+                        }
+                        &.bk1-columns {
+                            -webkit-column-count: 1;
+                            -moz-column-count: 1;
+                            column-count: 1;
+                            li {
+                                &.menu-item-promoted { 
+                                    display: block;
+                                }
+                                .inner-item {
+                                    .menu-item-image-wrap {
+                                        margin: 0 auto;
+                                        @media @mobile {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     li { /* menu-item */
                         position: relative;
                         display: block;
@@ -696,30 +754,33 @@ body {
   CONTACT FORM
    =============================== */
 
-   .contactform {
+.contactform {
     background-color: @color-swatch1;
     padding: 4em;
     border: 1px solid fade(@color-swatch5,50%);
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
-   }
-
-   .contactform fieldset {
-        border: none;
-        margin: 0 0 10px;
-        padding: 0;
+    @media @mobile {
+        padding: 2em;
     }
+}
 
-    .contactform input, .contactform textarea {
-        border: 1px solid darken(@color-swatch2,10%);
-    }
+.contactform fieldset {
+    border: none;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.contactform input, .contactform textarea {
+    border: 1px solid darken(@color-swatch2,10%);
+}
 
 /* ===============================
   SIGN UP FORM & PROFILE FORM
    =============================== */
 
-   .widget.signupform, .widget.profile form {
+.widget.signupform, .widget.profile form {
     background-color: @color-swatch1;
     padding: 4em;
     border: 1px solid fade(@color-swatch5,50%);
@@ -727,19 +788,22 @@ body {
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     clear: both;
-   }
+    @media @mobile {
+        padding: 2em;
+    }
+ }
 
-   .widget.signupform fieldset input, .widget.profile form fieldset input {
-        border: 1px solid darken(@color-swatch2,10%);
-        background-color: @color-swatch1;
-        height: 47px;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .signupform fieldset button, .widget.profile form button {
-        padding: 0 15px;
-        height: 45px;
-    }
+.widget.signupform fieldset input, .widget.profile form fieldset input {
+    border: 1px solid darken(@color-swatch2,10%);
+    background-color: @color-swatch1;
+    height: 47px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.signupform fieldset button, .widget.profile form button {
+    padding: 0 15px;
+    height: 45px;
+}
     
 
 /* ===============================
@@ -763,6 +827,9 @@ body {
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
+    @media @mobile {
+        padding: 2em;
+    }
     .slideshow-image-list,
     .slideshow-widget {
         min-height: 450px;
@@ -868,7 +935,11 @@ body {
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     margin: 1.5em 0;
+    @media @mobile {
+        padding: 2em;
+    }
     h2 {
+        padding: 1em 0;
         a {
             font-family: @font-swatch2-font-family;
             font-size: @font-swatch2-font-size;
@@ -911,6 +982,8 @@ width: 100%;
     form {
         input {
             border: 1px solid darken(@color-swatch2,10%);
+            width: 100%;
+            margin-bottom: 5px;
             }
 
         button {
@@ -987,14 +1060,25 @@ hr {
         @media @tablet {
             margin: 0;
         }
+        @media @mobile {
+            width: 100%;
+        }
     }
     &.show-content {
         .ecombasket-pull {
             background-color: @font-swatch7-background-color;
         }
     }
-    .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link {
-        display: inline-block;
+    .ecombasket-list-container {
+        padding: 1.5em 3em;
+        background-color: @color-swatch1;
+        ul li .ecombasket-item-image {
+            width: 55px;
+            height: 95px;
+        }
+        .ecombasket-checkout-wrap .ecombasket-checkout-link {
+            display: inline-block;
+        }
     }
 }
 
@@ -1068,15 +1152,7 @@ hr {
     }
     &.show-content {
         .ecombasket-pull {
-            -webkit-border-bottom-right-radius: 0px;
-            -webkit-border-bottom-left-radius: 0px;
-            -moz-border-radius-bottomright: 0px;
-            -moz-border-radius-bottomleft: 0px;
-            border-bottom-right-radius: 0px;
-            border-bottom-radius: 0px;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
+          
             background-color: lighten(@color-swatch4,10%);
         }
         .ecombasket-list-container {
@@ -1098,6 +1174,8 @@ hr {
             max-height: 400px;
             background-color: @color-swatch1;
             right: 0;
+            padding: 1em 3em;
+            margin-top: 5px;
         }
         ul {
             display: inline-block;
@@ -1142,9 +1220,6 @@ hr {
                     }
                     .ecombasket-item-title, .ecombasket-item-count {
                         padding-right: 5px;
-                    }
-                    .ecombasket-item-count {
-                        font-weight: 600;
                     }
                     .ecombasket-item-price, .ecombasket-remove-button {
                         width: 100%;
@@ -1572,7 +1647,6 @@ hr {
                 -webkit-appearance: menulist;
             }
             .delivery-price {
-                text-align: right;
                 font-size: @font-swatch5-font-size;
                 font-weight: @font-swatch5-font-weight;
                 color: @font-swatch5-color;
@@ -1582,7 +1656,6 @@ hr {
             }
         }
         .checkout-total-tax {
-            text-align: right;
             font-size: @font-swatch5-font-size;
             font-weight: @font-swatch5-font-weight;
             color: @font-swatch5-color;
@@ -1591,7 +1664,6 @@ hr {
 
         }
         .checkout-total-amount {
-            text-align: right;
             font-size: @font-swatch3-font-size;
             font-weight: @font-swatch3-font-weight;
             color: @font-swatch3-color;
