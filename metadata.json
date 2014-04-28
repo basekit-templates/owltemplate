@@ -2,7 +2,7 @@
 	"name":"Owl",
 	"thumbnail":"owltemplate.png",
 	"screenshot":"owltemplate.png",
-    "pageTypes": ["default", "home", "about", "contact", "gallery"],
+    "pageTypes": ["default", "home", "about", "contact", "gallery", "ecomcheckout"],
     "tags": {
     "en": ["clean", "menu", "ecommerce"],
     "es": ["limpio", "menú", "ecommerce"],
