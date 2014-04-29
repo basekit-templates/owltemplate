@@ -1092,12 +1092,12 @@ hr {
     z-index: 2;
     @media @tablet {
         position: relative;
-        width: 95%;
-        margin: 0 2.5%;
+        width: 90%;
+        margin: 0 5%;
         text-align: center;
     }
     @media @mobile {
-        margin: 2.5% 2.5% 0;
+        margin: 2.5% 5% 0;
     }
     .ecombasket-pull {
         width: auto;
@@ -1278,6 +1278,74 @@ hr {
    =============================== */
 
 .widget.ecomproductslist {
+    .productlist-display-form {
+        width: 68%;
+        margin: 1% 0 3.5% 3%;
+        display: inline-block;
+        @media only screen and (max-width: 1105px) { 
+            width: 100%;
+            margin: 1% 0 2% 3%;
+        }
+        @media @tablet {
+            -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
+            box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
+            background-color: @color-swatch1;
+            padding: 2em;
+            border: 1px solid fade(@color-swatch5,50%);
+            width: 97%;
+
+        }
+        @media @mobile {
+            margin-left: 0;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .form-group {
+            width: auto;
+            margin-right: 1%;
+            display: inline-block;
+            @media @tablet {
+                width: 29%;
+                margin-right: 3.82%;
+            }
+            @media @mobile {
+                width: 100%;
+            }
+            label[for="productlist-sort"] {
+                display: block;
+                margin-right: 2%;
+                display: inline-block;
+                @media @tablet {
+                    width: 100%;
+                }
+            }
+            &:first-child select {
+                width: 100%;
+            }
+            label {
+                display: none;
+            }
+            select {
+                -webkit-appearance: menulist;
+                width: 100%;
+            }
+        }
+    }
+    .productlist-item-count {
+        width: 28.5%;
+        text-align: right;
+        display: inline-block;
+        margin-left: 0;
+        @media only screen and (max-width: 1105px) { 
+            text-align: left;
+            width: 100%;
+            margin-left: 3.3%;
+        }
+        @media @mobile {
+            margin-left: 0;
+        }
+    }
     .ecom-productslist-product {
         .ecom-productslist-image-wrap {
             height:477px;
