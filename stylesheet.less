@@ -5,7 +5,6 @@ body {
   background-image:image('/images/tiny_grid.png');
   background-repeat: repeat;
   margin-bottom: 2em;
-  height: 100%;
   @media @mobile {
     background-image: none;
   }
@@ -48,12 +47,13 @@ body {
     -moz-box-shadow:    5px 0px 15px 0px rgba(0, 0, 0, 0.25);
     box-shadow:         5px 0px 15px 0px rgba(0, 0, 0, 0.25);
     position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 25%;
     height: 100%;
-    min-height: 100%;
-    max-height: 100%;
     padding: 2em;
     text-align: left;
     float: left;
