@@ -2,6 +2,7 @@
 	"name":"Owl",
 	"thumbnail":"owltemplate.png",
 	"screenshot":"owltemplate.png",
+	"templateType":"ecommerce",
     "pageTypes": ["default", "home", "about", "contact", "gallery", "ecomcheckout"],
     "tags": {
     "en": ["clean", "menu", "ecommerce"],
