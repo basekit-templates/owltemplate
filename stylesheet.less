@@ -752,6 +752,7 @@ body {
 .contactform {
     background-color: @color-swatch1;
     padding: 4em;
+    margin-bottom: 3em;
     border: 1px solid fade(@color-swatch5,50%);
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -769,6 +770,12 @@ body {
 
 .contactform input, .contactform textarea {
     border: 1px solid darken(@color-swatch2,10%);
+}
+
+// All Form
+.signupform,
+.contactform {
+    margin-bottom: 3em;
 }
 
 /* ===============================
@@ -790,7 +797,7 @@ body {
 
 .widget.signupform fieldset input, .widget.profile form fieldset input {
     border: 1px solid darken(@color-swatch2,10%);
-    background-color: @color-swatch1;
+    background-color: lighten(@color-swatch1,10%);
     height: 47px;
     width: 100%;
     margin-bottom: 10px;
@@ -805,10 +812,15 @@ body {
   TWITTER
    =============================== */
 
-   .twitter-profile-pic {
-        float: left;
-        margin-right: 10px;
-    }
+.twitter-profile-pic {
+    float: left;
+    margin-right: 10px;
+}
+
+// Tweet
+.widget.tweet {
+    padding: 20px 0;
+}
 
 
 /* ===============================
@@ -1281,6 +1293,16 @@ hr {
 
         }
     }
+}
+
+// Ecom - Empty Checkout
+.checkout-empty-link {
+    font-family:@font-swatch7-font-family; 
+    font-weight: @font-swatch7-font-weight; 
+    color:@font-swatch7-color; 
+    line-height:@font-swatch7-line-height; 
+    letter-spacing: @font-swatch7-letter-spacing; 
+    font-size: @font-swatch7-font-size;
 }
 
 
