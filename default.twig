@@ -4,14 +4,14 @@
 
 <div class="bk-pt-default">
     <div class="tablet-mob-nav wrapper clearfix">
-        {{widget('extendednavigation', 'tabletnav', {})|raw}}
+        {{widget('extendednavigation', 'tabletnav', {"align":"left"})|raw}}
     </div>
     <div class="logo-nav">
         <header class="bk-header companyheader clearfix">
             {{widget('logo', 'desktoplogo', {"defaultlogo": asset('images/logo.png')})|raw}}
             {{widget('companyname', 'desktopcompanyname', {"business": "profile"})|raw}}
         </header>  
-        {{widget('extendednavigation', 'desktopnav', {})|raw}}
+        {{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
         {{widget('companyaddress', 'desktopcompanyaddress', {})|raw}}
         {{widget('clicktocall', 'desktopclicktocall', {phoneText: '212 6574 6736'})|raw}}
     </div> <!-- end desktop-left-column -->
