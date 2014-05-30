@@ -1450,25 +1450,11 @@ hr {
             }
         }
         .ecom-product-preview-image-wrap {
-            margin-top: 8px;
-            margin-bottom: 1em;
-            background-position: top center;
-            background-repeat:no-repeat;
-            -webkit-background-size: contain;
-            -moz-background-size: contain;
-            -o-background-size: contain;
-            background-size: contain;
-            overflow: hidden;
-            background-color: @color-swatch1;
-            height: 616px;
-            @media only screen and (max-width: 1200px) { 
-                height: 462px;
-             }
-            @media only screen and (max-width: 950px) { 
-                height: 347px;
-            }
+            background-image: none !important;
+            height: auto;
             img {
-                display: none;
+                display: block;
+                width: 100%;
             }
         }
         .ecom-product-image-list {
