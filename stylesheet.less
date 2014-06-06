@@ -156,11 +156,9 @@ body {
     }
 }
 
-
 .widget {
     &.extendednavigation {
         z-index: 9999;
-        float: left;
         position: relative;
         width: 100%;
         min-height: 45px;
@@ -174,11 +172,9 @@ body {
             }
         }
         ul {
-           
-            float: none;
             margin: 0 auto;
-            text-align: center;
             padding: 0;
+            width: 100%;
             @media @tablet {
                 /* Hidden until nav icon is clicked */
                 display: none;
@@ -189,7 +185,6 @@ body {
                 background-color: transparent;
             }
             li {
-                float: left;
                 width: 100%;
                 border-bottom: 1px solid fade(@color-swatch6,10%);
                 display: block;
