@@ -256,14 +256,6 @@ body {
                             padding: 0 15px;
                         }
                         &:after {
-                            content: "\25BC";
-                            font-size: 5px;
-                            position: absolute;
-                            top: 1px;
-                            display: block;
-                            z-index: 9999999;
-                            right: 0;
-                            color: @color-swatch6;
                             @media @tablet {
                                 font-size: 10px;
                                 padding-right: 10px;
@@ -326,8 +318,9 @@ body {
     }
 }
 
-.widget .extendednavigation ul li.folder:after {
-    display: none;
+.widget .extendednavigation ul.align-right li.folder:after {
+    left: 5px;
+    right: inherit;
 }
 
 /* ===============================
