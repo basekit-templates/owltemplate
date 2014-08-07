@@ -324,6 +324,70 @@ body {
 }
 
 /* ===============================
+   GALLERY WIDGET
+   =============================== */
+
+.widget.gallery {
+    margin: 20px 0 20px -0.5%;
+    ul li {
+        @media @tablet {
+            width: 50%;
+            padding-bottom: 50%;
+        }
+        @media @mobile {
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        span.inner {
+            .title,
+            .description {
+                // Font
+                color: @color-swatch5;
+                font-family: @font-swatch5-font-family;
+                letter-spacing: @font-swatch5-letter-spacing;
+                text-align: left;
+            }
+            .title {
+                font-size: 19px;
+                line-height: 26px;
+            }
+            .description {
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+    }
+    // Image Data
+    .image-data {
+        display: block;
+        opacity: 0;
+        background-color: @color-swatch1;
+        border: 1px solid fade(@color-swatch5,50%);
+        -webkit-transition: all 0.4s ease-out;
+        -moz-transition: all 0.4s ease-out;
+        -o-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/* Lightbox */
+
+.lb-data .lb-caption, .lb-data .lb-number {
+  font-family:@font-swatch5-font-family;
+  font-size:@font-swatch5-font-size;
+  font-weight: @font-swatch5-font-weight;
+  line-height:@font-swatch5-line-height;
+  color:lighten(@font-swatch5-color,50%);
+}
+
+.lb-data .lb-number {
+  font-size:bkscale(@font-swatch5-font-size,0.9);
+}
+
+/* ===============================
    FEATURE
    =============================== */
 
@@ -428,13 +492,7 @@ body {
 .widget.button button
 {
   margin: 0.5em 0;
-  padding: 11px 26px;
   border: 0;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  box-shadow: 0px 2px 0px darken(@color-swatch3,10%);
-
   font-family: @font-swatch7-font-family;
   font-weight:@font-swatch7-font-weight;
   line-height: @font-swatch7-line-height;
@@ -448,7 +506,6 @@ body {
 .widget.button button:hover 
 {
   background-color: @font-swatch7-background-color-hover;
-  box-shadow: 0px 2px 0px darken(@font-swatch7-background-color-hover,15%);
   cursor: pointer;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
@@ -1669,20 +1726,18 @@ hr {
     } /* end ecom-product */
 } /* end .widget.ecomproduct */
 
-
 /* ===============================
-  ECOM - CHECKOUT
+  ECOM - BASKET SUMMARY
    =============================== */
 
-.widget.ecomcheckout {
-    clear: both;
-    margin-bottom: 1em;
+.widget.ecombasketsummary {
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     box-shadow:         0px 5px 4px 0px rgba(0, 0, 0, 0.15);
     background-color: @color-swatch1;
-    padding: 3em 4em 4em;
+    padding: 4em;
     border: 1px solid fade(@color-swatch5,50%);
+    margin-bottom: 2em;
     @media @mobile {
         background-color: transparent;
         padding: 0;
@@ -1692,21 +1747,41 @@ hr {
         box-shadow:         none;
     }
     h2 {
-        text-align: center;
-        margin-bottom: 1em;
-        border-bottom: 1px solid fade(@color-swatch5,13%);
-        padding: 1em 0 2em;
-        @media @tablet {
-            padding: 1em;
+        border-bottom: 1px solid fade(@color-swatch5,10%);
+        padding-bottom: 2em;
+        @media only screen and (max-width: 530px) {
+            padding: 0.5em 0;
         }
     }
-    table {
+    .basket-summary-empty-copy {
+        padding: 2em 0;
+    }
+    a.basket-summary-empty-cta.btn {
+      font-weight: 600 !important;
+    }
+    a.basket-summary-empty-cta.btn, .btn.basket-summary-submit {
+        margin-bottom: 10px;
+        font-family: @font-swatch7-font-family;
+        font-weight:@font-swatch7-font-weight;
+        line-height: @font-swatch7-line-height;
+        font-size: @font-swatch7-font-size;
+        letter-spacing: @font-swatch7-letter-spacing;
+        background-color: @font-swatch7-background-color;
+        color: @font-swatch7-color;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            background-color: @font-swatch7-background-color-hover;
+            cursor: pointer;
+        }
+    }
+    .basket-summary-items-table {
         border-spacing: 0;
         width: 100%;
         tr {
             width: 100%;
             th, td {
-                border-bottom: 1px solid fade(@color-swatch5,13%);
+                border-bottom: 1px solid fade(@color-swatch5,10%);
                 padding: 1.5em 0;
                 text-align: left;
                 &:nth-child(1) {
@@ -1714,9 +1789,6 @@ hr {
                     padding-left: 5px;
                     @media @tablet {
                         width: 15%;
-                    }
-                    @media @mobile {
-                        width: 18%;
                     }
                 }
                 &:nth-child(2) {
@@ -1730,174 +1802,112 @@ hr {
             th {
                 padding: 1.5em 0.5em;
                 vertical-align: bottom;
-                font-size: @font-swatch3-font-size;
-                font-weight: @font-swatch3-font-weight;
-                color: @font-swatch3-color;
             }
-            td {
-                vertical-align: top;
-                .checkout-productname, .checkout-pricepu {
-                    display: block;
+            @media only screen and (max-width: 530px) {
+                display: table;
+                th:nth-child(3) {
+                    display: none;
                 }
-                .checkout-quantitybtn {
-                    display: inline-block;
-                    margin: 10px 0 0;
-                    button {
-                        background-color: @color-swatch3;
-                        margin: 0;
-                        font-size: 1em;
-                        @media @tablet {
-                            width: 56px;
-                            height: 44px;
+                td {
+                    padding: 1em 0 0;
+                    float: left;
+                    width: 100%;
+                    border-bottom: none;
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                        width: 100%;
+                    }
+                    &:nth-child(3) {
+                        text-align: left;
+                        padding: 0 0 1em;
+                        color: @color-swatch4;
+                        border-bottom: 1px solid fade(@color-swatch5,10%);
+                    }
+                    &.basket-summary-amount {
+                        padding: 1em 0;
+                    }
+                }
+            }
+            &.basket-summary-items {
+                td {
+                    vertical-align: top;
+                    .image-wrap {
+                        width: 95px;
+                        height: 95px;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                        overflow: hidden;
+                        float: left;
+                        margin-right: 20px;
+                        img {
+                            display: none;
                         }
                     }
-                    span {
-                        width: 56px;
-                        display: inline-block;
-                        text-align: center;
+                    .basket-summary-productname, .basket-summary-pricepu {
+                        display: block;
                     }
-                }
-                &.checkout-subtotal {
-                    font-size: @font-swatch3-font-size;
-                    font-weight: @font-swatch3-font-weight;
-                    color: @font-swatch3-color;
-                    vertical-align: bottom;
+                    .basket-summary-productname {
+                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                    .basket-summary-quantity {
+                        padding-right: 5px;
+                        padding-bottom: 5px;
+                        display: block;
+                    }
+                    .basket-summary-quantitybtn {
+                        background-color: transparent;
+                        button {
+                            background-color: darken(@color-swatch1,3%);
+                            margin: 0;
+                            font-size: 1em;
+                            line-height: normal;
+                            color: @color-swatch4;
+                            border: 1px solid darken(@color-swatch1,7%);
+                            &:hover {
+                                background-color: darken(@color-swatch1,10%);
+                            }
+                            @media @tablet {
+                                width: 44px;
+                                height: 44px;
+                            }
+                        }
+                        span {
+                            width: auto;
+                            padding: 0 10px;
+                        }
+                    }
+                    &.basket-summary-amount {
+                        vertical-align: bottom;
+                    }
                 }
             }
             &:last-child {
                 td {
                     border: none;
-                    color: @font-swatch5-color;
-                }
-            }
-            .image-wrap {
-                width: 89px;
-                height: 89px;
-                margin-right: 10px;
-                margin-top: 4px;
-                background-position: center center;
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                overflow: hidden;
-                float: left;
-                img {
-                    display: none;
+                    color: @color-swatch5;
+                    font-size: @font-swatch3-font-size;
+                    line-height: @font-swatch3-line-height;
                 }
             }
         }
     }
-    .checkout-form {
-        .delivery {
-            @media @tablet {
-                width: 100%;
-            }
-            .form-group {
-                span:not(.no-shipping) {
-                    display:none;
-                }
-                &.invalid {
-                    span:not(.no-shipping) {
-                        display:block;
-                    }
-                    input {
-                        margin-bottom: 0.5em;
-                        outline: 1px solid red;
-                    }
-                    span {
-                        color: red;
-                        margin-bottom: 0.5em;
-                    }
-                }
-            }
-            .delivery-title {
-                font-size: @font-swatch3-font-size;
-                font-weight: @font-swatch3-font-weight;
-                color: @font-swatch3-color;
-                padding: 0 0 20px 0;
-                display: block;
-                border-bottom: 1px solid fade(@color-swatch5,13%);
-                margin-bottom: 20px;
-            }
-            .form-group {
-                width: 50%;
-                @media only screen and (max-width: 1200px) { 
-                    width: 100%;
-                }
-                label {
-                    width:100%;
-                    float: left;
-                }
-                input {
-                    border: 1px solid fade(@color-swatch5,13%);
-                    margin-bottom: 1em;
-                }
-            }
-            select {
-                margin-bottom: 1.5em;
-                -webkit-appearance: menulist;
-            }
-            .delivery-price {
-                font-size: @font-swatch5-font-size;
-                font-weight: @font-swatch5-font-weight;
-                color: @font-swatch5-color;
-                padding: 20px 5px;
-                margin-top: 2em;
-                border-top: 1px solid fade(@color-swatch5,13%);
-            }
-        }
-        .checkout-total-tax {
-            font-size: @font-swatch5-font-size;
-            font-weight: @font-swatch5-font-weight;
-            color: @font-swatch5-color;
-            padding: 20px 5px;
-            border-top: 1px solid fade(@color-swatch5,13%);
-
-        }
-        .checkout-total-amount {
-            font-size: @font-swatch3-font-size;
-            font-weight: @font-swatch3-font-weight;
-            color: @font-swatch3-color;
-            padding: 20px 5px;
-            border-top: 1px solid fade(@color-swatch5,13%);
-            border-bottom: 1px solid fade(@color-swatch5,13%);
-
-        }
-        .checkout-payment-method {
-            padding: 20px 5px;
-            border-bottom: 1px solid fade(@color-swatch5,13%);
-            input {
-                -webkit-appearance: radio;
-                width: auto;
-            }
-        }
-        .checkout-order-button {
-            padding: 10px;
-            margin-top: 20px;
-            font-family: @font-swatch7-font-family;
-            color: @font-swatch7-color;
-            font-size: @font-swatch7-font-size;
-            font-weight: @font-swatch7-font-weight;
-            line-height: @font-swatch7-line-height;
-            background-color: @font-swatch7-background-color;
-            border: none;
-            &:hover {
-                background-color: @font-swatch7-background-color-hover;
-                cursor: pointer;
-            }
-            &:disabled {
-                background-color: fade(@color-swatch3,50%);
-            }
-        }
-    }
-    .checkout-legal-links {
+    .basket-summary-legal-links {
         list-style: none;
-        padding: 20px 0 0;
+        padding: 1em 0;
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
-
 
 /* ===============================
   ECOM - CATEGORIES LIST
