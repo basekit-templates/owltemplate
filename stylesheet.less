@@ -166,6 +166,7 @@ body {
 
 .widget {
     &.extendednavigation {
+        .clearfix;
         z-index: 9999;
         position: relative;
         width: 100%;
@@ -346,6 +347,11 @@ body {
 
 .extendednavigation ul li.folder.selected ul li .text {
     color: @font-swatch6-color;
+}
+
+.widget.extendednavigation .bk-overlay {
+    width: 100% !important;
+    left: inherit !important;
 }
 
 /* ===============================
