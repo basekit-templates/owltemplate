@@ -362,7 +362,7 @@ body {
         display: block;
         opacity: 0;
         background-color: @color-swatch1;
-        border: 1px solid fade(@color-swatch5,50%);
+        border: 1px solid fade(@color-swatch6,10%);
         -webkit-transition: all 0.4s ease-out;
         -moz-transition: all 0.4s ease-out;
         -o-transition: all 0.4s ease-out;
@@ -557,7 +557,7 @@ body {
             .menu-header, .menu-subsection-header {
                 margin: 0;
                 padding: 4em 0 2em;
-                text-align: left;
+                text-align: center;
                 border-bottom: 1px dotted fade(@color-swatch6,50%);
                 @media @tablet {
                     padding: 2em 0 0.5em;
@@ -896,14 +896,53 @@ body {
 }
     
 
+
 /* ===============================
-  TWITTER
+   TWITTER
    =============================== */
 
-.twitter-profile-pic {
-    float: left;
-    margin-right: 10px;
+.widget.twitter .bk-full-name {
+    color: @color-swatch3;
 }
+
+.widget.twitter ul li span a {
+    color: @color-swatch3;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+ul.twitter {
+    .twitter-profile-pic {
+        margin-right: 10px;
+        margin-top: 2px;
+        a img {
+            width: 48px;
+        }
+    }
+    .twitter-content {
+        padding-left: 68px;
+        p {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.widget.profile ul.twitter .twitter-profile-pic, .widget.profile ul.twitter time, .widget.profile ul.twitter span {
+    display: inline-block;
+}
+
+.widget.profile ul.twitter .twitter-profile-pic {
+    vertical-align: top;
+}
+
+.widget.profile ul.twitter .twitter-content {
+    padding-left: 0;
+    display: inline-block;
+}
+
+
 
 // Tweet
 .widget.tweet {
@@ -1401,6 +1440,7 @@ hr {
 .ecom-featuredproducts-header {
     h2 {
         color: @font-swatch6-color;
+        padding: 2em 0;
     }
 }
 
@@ -1423,7 +1463,7 @@ hr {
         }
     }
     .ecom-featuredproducts-info {
-        padding: 20px;
+        padding: 0 20px 20px;
         background-color: @color-swatch1;
         -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -1442,6 +1482,14 @@ hr {
             font-size: bkscale(@font-swatch5-font-size,1.1);
             line-height: bkscale(@font-swatch5-line-height,1.1);
         }        
+    }
+    a:hover {
+        text-decoration: none;
+        .ecom-featuredproducts-info {
+            .ecom-featuredproducts-title, .ecom-featuredproducts-price {
+                color: @color-swatch3;
+            }
+        }
     }
 }
 
@@ -1463,51 +1511,27 @@ hr {
             padding: 20px;
             margin: 3% 0;
         }
+        label {
+            display: block;
+            padding-left: 3px;
+        }
         .productlist-display-form {
             .form-group {
                 display: inline-block;
                 @media @mobile {
                     width: 100%;
                 }
-                select {
-                    -moz-appearance: none;
-                    text-indent: 0.01px;
-                    text-overflow: '';
-                    background-position: right 12px center;
-                    background-position-x: 93%;
-                    background-position-y: 55%;
-                    cursor: pointer;
-                    -webkit-appearance: none;
-                    -webkit-border-radius: 0;
-                    position: relative;
-                    background-image: image('/images/arrow-down.png');
-                    background-repeat: no-repeat;
-                    background-position: right 12px center;
-                    margin-bottom: 12px;
-                    padding: 8px 33px 8px 8px;
-                    border: 1px solid darken(@color-swatch1,3%);
-                    background-color: @color-swatch2;
-                    color: @color-swatch5;
-                    height: 35px;
-                    @media @mobile {
-                        width: 100%;
-                        height: 45px;
-                        border: 1px solid darken(@color-swatch1,8%);
-                    }
-                }
-                select::-ms-expand {
-                    display: none;
-                }
-                select[name="displayCount"] {
-                    margin-bottom: 0;
-                }
                 &.productlist-search {
                     input {
                         -webkit-appearance: none;
                         -moz-appearance: none;
                         -webkit-border-radius: 0;
+                        background-color: @color-swatch2;
                         height: 35px;
                         border: 1px solid darken(@color-swatch1,3%);
+                        font-size: 13px;
+                        line-height: inherit;
+                        color: @color-swatch5;
                         @media @mobile {
                             width: 100%;
                             margin-bottom: 5px;
@@ -1519,6 +1543,9 @@ hr {
                         padding: 4px 14px;
                         @media @mobile {
                             padding: 8px 14px;
+                        }
+                        &:hover {
+                            background-color: @font-swatch7-background-color-hover;
                         }
                     }
                 }
@@ -1543,7 +1570,7 @@ hr {
             }
         }
         .ecom-productlist-info {
-            padding: 20px;
+            padding: 0 20px 20px;
             background-color: @color-swatch1;
             -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
             -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -1566,7 +1593,39 @@ hr {
             font-size: bkscale(@font-swatch5-font-size,1.1);
             line-height: bkscale(@font-swatch5-line-height,1.1);
         }
+        a:hover {
+            text-decoration: none;
+            .ecom-productlist-info {
+                .ecom-productslist-title, .ecom-productlist-price {
+                    color: @color-swatch3;
+                }
+            }
+        }
     }
+}
+
+select {
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: 1px solid darken(@color-swatch2,7%);
+    color: @color-swatch5;
+    background-color: @color-swatch2;
+    font-family: @font-swatch5-font-family;
+    font-size: 12px;
+    line-height: inherit;
+    height: 35px;
+    @media @tablet {
+      min-width: 50%;
+    }
+    @media @mobile {
+        width: 100%;
+        height: 45px;
+    }
+}
+select[name="displayCount"] {
+    margin-bottom: 0;
 }
 
 /* ===============================
@@ -1575,6 +1634,7 @@ hr {
 
 .widget.ecomproduct {
     clear: both;
+    margin: 2em 0;
     .ecom-product {
         -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow:    0px 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -1671,6 +1731,8 @@ hr {
                 }
             }
             .ecom-product-cattag {
+                float: left;
+                width: 100%;
                 span {
                    display: block;
                 }
@@ -1681,19 +1743,34 @@ hr {
             }
         }
         .btn {
-            width: 70%;
-            margin: 2.5em 0 0;
-            @media only screen and (max-width: 1200px) { 
-                width: 100%;
+            &.ecom-product-go-to-checkout-btn, &.ecom-product-add-to-cart-btn {
+                width: 70%;
+                @media only screen and (max-width: 1200px) { 
+                    width: 100%;
+                }
+                @media @tablet {
+                    width:50%;
+                }
+                @media @mobile {
+                    width:100%;
+                }
             }
-            @media @tablet {
-                width:50%;
-            }
-            @media @mobile {
-                width:100%;
+            &.ecom-product-go-to-checkout-btn {
+                text-decoration: none;
+                margin: 2em 0;
+                font-weight: 600;
+                float: left;
+                text-align: center;
+                margin: 20px 0;
+                &:hover {
+                    background-color: @font-swatch7-background-color-hover;
+                }
             }
             &.ecom-product-add-to-cart-btn {
                 margin-bottom: 20px;
+                &:hover {
+                    background-color: @font-swatch7-background-color-hover;
+                }
             }
             &.ecom-product-add-to-cart-btn .text:before {
                 content: "";
