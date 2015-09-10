@@ -1537,7 +1537,8 @@ hr {
     }
 }
 
-.ecom-featuredproducts-product {
+
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product {
     background-color: @color-swatch1;
     border-top: 1px solid fade(@color-swatch6,10%);
     border-left: 1px solid fade(@color-swatch6,10%);
@@ -1548,10 +1549,10 @@ hr {
         background-color: fade(@color-swatch6,10%);
         background-position: center;
         border: 20px solid @color-swatch1;
-         @media only screen and (max-width: 1200px) { 
+         @media only screen and (max-width: 1200px) {
             height: 312px;
          }
-         @media only screen and (max-width: 950px) { 
+         @media only screen and (max-width: 950px) {
             height: 247px;
         }
     }
@@ -1574,7 +1575,7 @@ hr {
             color: @color-swatch3;
             font-size: bkscale(@font-swatch5-font-size,1.1);
             line-height: bkscale(@font-swatch5-line-height,1.1);
-        }        
+        }
     }
     a:hover {
         text-decoration: none;
@@ -1585,6 +1586,9 @@ hr {
         }
     }
 }
+
+
+
 
 /* ===============================
   ECOM - PRODUCTLIST
@@ -1609,10 +1613,29 @@ hr {
             padding-left: 3px;
         }
         .productlist-display-form {
-            .form-group {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            @media @tablet {
                 display: inline-block;
+            }
+            .form-group {
+                -webkit-flex: 0 1 30%;
+                -ms-flex: 0 1 30%;
+                flex: 0 1 30%;
+                @media @tablet {
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 0;
+                }
                 @media @mobile {
                     width: 100%;
+                }
+                select {
+                    width: 100%;
+                }
+                input {
+                    margin-bottom: 5px;
                 }
                 &.productlist-search {
                     input {
@@ -1625,9 +1648,12 @@ hr {
                         font-size: 13px;
                         line-height: inherit;
                         color: @color-swatch5;
+                        @media @tablet {
+                            width: 100%;
+                            margin-bottom: 20px;
+                        }
                         @media @mobile {
                             width: 100%;
-                            margin-bottom: 5px;
                             height: 45px;
                             border: 1px solid darken(@color-swatch1,8%);
                         }
@@ -1642,6 +1668,11 @@ hr {
                         }
                     }
                 }
+            }
+        }
+        .productlist-item-count {
+            @media @tablet {
+                margin-top: 20px;
             }
         }
     }
