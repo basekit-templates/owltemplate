@@ -1,7 +1,7 @@
 {
 	"name":"Owl",
 	"thumbnail":"owltemplate.png",
-	"screenshot":"owltemplate.jpg",
+	"screenshot":"owl-screenshot.jpg",
 	"templateType":"ecommerce",
     "tags": {
     "en": ["clean", "menu", "ecommerce"],
