@@ -867,10 +867,11 @@ body {
 
 
 /* ===============================
-  CONTACT FORM
+  CONTACT FORM & ADVANCED FORM
    =============================== */
 
-.contactform {
+.contactform,
+.advancedcontactform {
     background-color: @color-swatch1;
     padding: 4em;
     margin-bottom: 3em;
@@ -883,19 +884,34 @@ body {
     }
 }
 
-.contactform fieldset {
+.contactform fieldset,
+.advancedcontactform fieldset {
     border: none;
     margin: 0 0 10px;
     padding: 0;
 }
 
-.contactform input, .contactform textarea {
+.contactform input,
+.advancedcontactform form input[type=email], 
+.advancedcontactform form input[type=text],
+.contactform textarea,
+.advancedcontactform fieldset textarea,
+.advancedcontactform form select {
     border: 1px solid darken(@color-swatch2,10%);
 }
 
-// All Form
+.advancedcontactform .option-list {
+    padding: 1em 0;
+}
+.advancedcontactform {
+    margin-top: 20px;
+}
+
+// All Forms
+
 .signupform,
-.contactform {
+.contactform,
+.advancedcontactform {
     margin-bottom: 3em;
 }
 
