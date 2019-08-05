@@ -1,5 +1,6 @@
 {
 	"name":"Owl",
+	"versionTenCompatible": 1,
 	"thumbnail":"owltemplate.png",
 	"screenshot":"owltemplate-screenshot.jpg",
 	"templateType":"ecommerce",
